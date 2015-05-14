@@ -96,7 +96,6 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 2015-05-14&nbsp;&nbsp;&nbsp;v0.0.1&nbsp;&nbsp;&nbsp;init
-2015-05-14&nbsp;&nbsp;&nbsp;v0.0.1&nbsp;&nbsp;&nbsp;rename project name from `grunt-buddha` to `wbh-grunt-buddha`, since the module name `grunt-buddha` had been registered by other in npm.
 
 ## License
 Copyright (c) 2015 wubinhong. Licensed under the MIT license.
