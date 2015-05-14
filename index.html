@@ -27,6 +27,11 @@
 </blockquote>
 
 <h2>
+<a id="project-reference" class="anchor" href="#project-reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>Project reference</h2>
+
+<p><a href="http://wubinhong.github.io/grunt-buddha">Project Page</a></p>
+
+<h2>
 <a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h2>
 
 <p>This plugin requires Grunt.</p>
@@ -62,20 +67,20 @@
 <a id="options" class="anchor" href="#options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h3>
 
 <h4>
-<a id="optionsseparator" class="anchor" href="#optionsseparator" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.separator</h4>
+<a id="optionswho" class="anchor" href="#optionswho" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.who</h4>
 
 <p>Type: <code>String</code>
-Default value: <code>',  '</code></p>
+Default value: <code>buddha</code></p>
 
-<p>A string value that is used to do something with whatever.</p>
+<p>Choose an object to protect our code, with two option: buddha | alpaca</p>
 
 <h4>
-<a id="optionspunctuation" class="anchor" href="#optionspunctuation" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.punctuation</h4>
+<a id="optionscommentsymbol" class="anchor" href="#optionscommentsymbol" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.commentSymbol</h4>
 
 <p>Type: <code>String</code>
-Default value: <code>'.'</code></p>
+Default value: <code>//</code></p>
 
-<p>A string value that is used to do something else with whatever else.</p>
+<p>A comment symbol to comment the string picture which will be add in front of the target source file</p>
 
 <h3>
 <a id="usage-examples" class="anchor" href="#usage-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage Examples</h3>
@@ -83,31 +88,37 @@ Default value: <code>'.'</code></p>
 <h4>
 <a id="default-options" class="anchor" href="#default-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Default Options</h4>
 
-<p>In this example, the default options are used to do something with whatever. So if the <code>testing</code> file has the content <code>Testing</code> and the <code>123</code> file had the content <code>1 2 3</code>, the generated result would be <code>Testing, 1 2 3.</code></p>
+<p>在该示例中，定义了一个任务目标<code>js</code>，将指定目录下的匹配文件输出至目标文件目录。
+其参数：<code>cwd</code>表示要加字符图形的文件路径（仅支持一级目录），<code>src</code>表示匹配的文件类型（支持正则表达式），<code>dest</code>表示要输出的文件目录路径</p>
 
 <div class="highlight highlight-js"><pre>grunt.initConfig({
   buddha<span class="pl-k">:</span> {
-    options<span class="pl-k">:</span> {},
-    files<span class="pl-k">:</span> {
-      <span class="pl-s"><span class="pl-pds">'</span>dest/default_options<span class="pl-pds">'</span></span><span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>src/testing<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>src/123<span class="pl-pds">'</span></span>],
-    },
+    js<span class="pl-k">:</span> [{
+      cwd<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>app/javascript<span class="pl-pds">'</span></span>,
+      src<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>*.js<span class="pl-pds">'</span></span>],
+      dest<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>.tmp/javascript/buddha<span class="pl-pds">'</span></span>
+    }],
   },
 })</pre></div>
 
 <h4>
 <a id="custom-options" class="anchor" href="#custom-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Custom Options</h4>
 
-<p>In this example, custom options are used to do something else with whatever else. So if the <code>testing</code> file has the content <code>Testing</code> and the <code>123</code> file had the content <code>1 2 3</code>, the generated result in this case would be <code>Testing: 1 2 3 !!!</code></p>
+<p>该示例对options做了特殊配置，有2个参数可以配置：
+<code>who</code>：选择哪个卡通图案，可选项：<code>buddha</code> | <code>alpaca</code>，默认为<code>buddha</code>
+<code>commentSymbol</code>：卡通图案的注释符，默认为<code>//</code></p>
 
 <div class="highlight highlight-js"><pre>grunt.initConfig({
   buddha<span class="pl-k">:</span> {
     options<span class="pl-k">:</span> {
-      separator<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>: <span class="pl-pds">'</span></span>,
-      punctuation<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span> !!!<span class="pl-pds">'</span></span>,
+      who<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>buddha<span class="pl-pds">'</span></span>,
+      commentSymbol<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>//<span class="pl-pds">'</span></span>
     },
-    files<span class="pl-k">:</span> {
-      <span class="pl-s"><span class="pl-pds">'</span>dest/default_options<span class="pl-pds">'</span></span><span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>src/testing<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>src/123<span class="pl-pds">'</span></span>],
-    },
+    js<span class="pl-k">:</span> [{
+      cwd<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>app/javascript<span class="pl-pds">'</span></span>,
+      src<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>*.js<span class="pl-pds">'</span></span>],
+      dest<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>.tmp/javascript/buddha<span class="pl-pds">'</span></span>
+    }],
   },
 })</pre></div>
 
@@ -119,7 +130,7 @@ Default value: <code>'.'</code></p>
 <h2>
 <a id="release-history" class="anchor" href="#release-history" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release History</h2>
 
-<p><em>(Nothing yet)</em></p>
+<p>2015-05-14   v0.0.1   init</p>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
