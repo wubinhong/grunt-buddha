@@ -95,7 +95,7 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-2015-05-14&nbsp;&nbsp;&nbsp;v0.0.1&nbsp;&nbsp;&nbsp;init
+2015-05-14&nbsp;&nbsp;&nbsp;v0.0.1&nbsp;&nbsp;&nbsp;init<br>
 2015-05-14&nbsp;&nbsp;&nbsp;v0.0.1&nbsp;&nbsp;&nbsp;rename project name from `grunt-buddha` to `wbh-grunt-buddha`, since the module name `grunt-buddha` had been registered by other in npm.
 
 ## License
